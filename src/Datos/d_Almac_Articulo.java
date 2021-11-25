@@ -3,7 +3,7 @@ package Datos;
 
 /**
  *
- * @author PC
+ * @author CINTHYA PAOLA GUILLERMO CASTRO
  */
 public class d_Almac_Articulo {
     
