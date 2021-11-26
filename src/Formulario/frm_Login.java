@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import Datos.d_Usuario;
 import Logica.l_Usuario;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 /**
  *
@@ -41,16 +42,15 @@ public class frm_Login extends javax.swing.JFrame {
         
         l_Usuario func = new l_Usuario();
         
-        
-            
+   
         du = func.login(usuario, password);
   
      
         
         if (du != null) {
             
-            r = "BIENVENIVO AL SISTEMA: " + du.getNombre() + " " + du.getApellido();   
-        
+            r = "BIENVENIVO AL SISTEMA: " + du.getNombre() + " " + du.getApellido(); 
+
         }
         
         
@@ -258,11 +258,12 @@ public class frm_Login extends javax.swing.JFrame {
         
         if (!ru.isEmpty()) {
             
-            JOptionPane.showMessageDialog(rootPane, ru); 
+            /*JOptionPane.showMessageDialog(rootPane, ru); */
             
-            /*frm_Confi_Cliente ingreso = new frm_Confi_Cliente();
-            ingreso.setVisible(true);
-            this.dispose();*/
+            frm_Menu f_menu = new frm_Menu();
+            f_menu.setVisible(true);
+          
+            this.dispose();
 
         }else{
             JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTA", "error", JOptionPane.WARNING_MESSAGE); 
@@ -281,12 +282,7 @@ public class frm_Login extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
+           UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(frm_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {

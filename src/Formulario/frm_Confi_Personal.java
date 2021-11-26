@@ -30,7 +30,8 @@ public class frm_Confi_Personal extends javax.swing.JFrame {
     public frm_Confi_Personal() {
         initComponents();
         
-        this.setLocationRelativeTo(null);
+        this.setLocation(15, 40);
+        
         mostrar("");
         select_documento(0);
         select_ubigeo(0);

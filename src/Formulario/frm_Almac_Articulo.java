@@ -54,7 +54,8 @@ public class frm_Almac_Articulo extends javax.swing.JFrame {
     public frm_Almac_Articulo() {
         initComponents();
         
-        this.setLocationRelativeTo(null);
+        this.setLocation(15, 40);
+        
         cargar_table("");  
         
         select_almacen(0);

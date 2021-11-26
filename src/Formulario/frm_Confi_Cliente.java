@@ -30,7 +30,9 @@ public class frm_Confi_Cliente extends javax.swing.JFrame {
     public frm_Confi_Cliente() {
         initComponents();
         
-        this.setLocationRelativeTo(null);
+        
+        this.setLocation(15, 40);
+        
         mostrar("");
         select_documento(0);
         select_ubigeo(0);
@@ -871,7 +873,7 @@ public class frm_Confi_Cliente extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 665, Short.MAX_VALUE)
         );
 
         pack();

@@ -30,7 +30,7 @@ public class frm_Confi_Proveedor extends javax.swing.JFrame {
     public frm_Confi_Proveedor() {
         initComponents();
         
-        this.setLocationRelativeTo(null);
+        this.setLocation(15, 40);
         mostrar("");
         select_documento(0);
         select_ubigeo(0);

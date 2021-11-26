@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -683,6 +684,10 @@ public class frm_Almac_Marca extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
+        /*UIManager.put("MenuBar.background", new Color(33, 150, 243));
+        UIManager.put("MenuItem.opaque", true);
+        UIManager.put("Menu.background", Color.GREEN);*/
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
