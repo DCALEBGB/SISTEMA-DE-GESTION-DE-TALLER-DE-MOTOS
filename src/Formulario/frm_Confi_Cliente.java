@@ -1088,10 +1088,10 @@ public class frm_Confi_Cliente extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new frm_Confi_Cliente().setVisible(true);
+                    }
+                });
             }
-        });
-    }
-
+        
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btneditar;

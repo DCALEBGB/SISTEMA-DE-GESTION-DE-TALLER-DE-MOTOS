@@ -260,9 +260,9 @@ public class frm_Login extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(rootPane, ru); 
             
-            frm_Confi_Cliente ingreso = new frm_Confi_Cliente();
+            /*frm_Confi_Cliente ingreso = new frm_Confi_Cliente();
             ingreso.setVisible(true);
-            this.dispose();
+            this.dispose();*/
 
         }else{
             JOptionPane.showMessageDialog(null, "USUARIO O CONTRASEÑA INCORRECTA", "error", JOptionPane.WARNING_MESSAGE); 

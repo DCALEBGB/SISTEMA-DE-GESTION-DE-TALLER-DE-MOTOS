@@ -242,8 +242,7 @@ public class frm_Almac_Articulo extends javax.swing.JFrame {
         if (id != 0) {
             
             cbounidad_medida.setSelectedItem(new d_Stati_Unidad_Medida(id));
-            
-            
+
         }
         
     }
@@ -744,6 +743,7 @@ public class frm_Almac_Articulo extends javax.swing.JFrame {
         jtpdatos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setForeground(new java.awt.Color(51, 51, 51));
         jPanel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
@@ -914,7 +914,7 @@ public class frm_Almac_Articulo extends javax.swing.JFrame {
                                 .addGap(13, 13, 13))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(cbopresentacion, 0, 330, Short.MAX_VALUE)
+                                .addComponent(cbopresentacion, 0, 326, Short.MAX_VALUE)
                                 .addGap(295, 295, 295))))))
         );
         jPanel3Layout.setVerticalGroup(
@@ -981,6 +981,7 @@ public class frm_Almac_Articulo extends javax.swing.JFrame {
         jtpdatos.addTab("Datos 1", jPanel3);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         txtcodigo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -1033,7 +1034,7 @@ public class frm_Almac_Articulo extends javax.swing.JFrame {
                         .addComponent(jdfecha_vencimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jcbfl_vence)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblimagen, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel7Layout.createSequentialGroup()
@@ -1066,7 +1067,7 @@ public class frm_Almac_Articulo extends javax.swing.JFrame {
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jcbfl_vence, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                             .addComponent(jdfecha_vencimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jtpdatos.addTab("Datos 2", jPanel7);

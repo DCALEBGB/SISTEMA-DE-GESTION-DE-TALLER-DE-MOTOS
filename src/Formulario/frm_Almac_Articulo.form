@@ -437,6 +437,11 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
+                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
@@ -527,7 +532,7 @@
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Component id="cbopresentacion" pref="330" max="32767" attributes="0"/>
+                                          <Component id="cbopresentacion" pref="326" max="32767" attributes="0"/>
                                           <EmptySpace min="-2" pref="295" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -821,6 +826,11 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
+                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
@@ -845,7 +855,7 @@
                                   <Component id="jcbfl_vence" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="50" max="32767" attributes="0"/>
+                          <EmptySpace pref="46" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lblimagen" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
@@ -888,7 +898,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="15" max="32767" attributes="0"/>
+                          <EmptySpace pref="19" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
