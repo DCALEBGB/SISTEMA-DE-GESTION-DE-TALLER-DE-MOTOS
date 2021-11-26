@@ -4,7 +4,7 @@ package Datos;
 
 /**
  *
- * @author PC
+ * @author CINTHYA 
  */
 public class d_Confi_Proveedor {
     
