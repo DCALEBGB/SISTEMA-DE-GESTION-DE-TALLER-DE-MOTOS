@@ -17,6 +17,8 @@ public class frm_Menu extends javax.swing.JFrame {
         initComponents();
         
         this.setLocation(0, 0);
+        
+        this.txtid_usuario.setVisible(false);
      
     }
 
@@ -30,6 +32,7 @@ public class frm_Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jdp_escritorio = new javax.swing.JDesktopPane();
+        txtid_usuario = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -39,6 +42,11 @@ public class frm_Menu extends javax.swing.JFrame {
         jmi_personal = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jmi_articulo = new javax.swing.JMenuItem();
+        jminueva_compra = new javax.swing.JMenuItem();
+        jmiregistro_compra = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jminueva_venta = new javax.swing.JMenuItem();
+        jmiregistro_venta = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -47,15 +55,25 @@ public class frm_Menu extends javax.swing.JFrame {
 
         jdp_escritorio.setBackground(new java.awt.Color(255, 255, 255));
 
+        txtid_usuario.setText("3");
+
+        jdp_escritorio.setLayer(txtid_usuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jdp_escritorioLayout = new javax.swing.GroupLayout(jdp_escritorio);
         jdp_escritorio.setLayout(jdp_escritorioLayout);
         jdp_escritorioLayout.setHorizontalGroup(
             jdp_escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1365, Short.MAX_VALUE)
+            .addGroup(jdp_escritorioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtid_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1343, Short.MAX_VALUE))
         );
         jdp_escritorioLayout.setVerticalGroup(
             jdp_escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 665, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdp_escritorioLayout.createSequentialGroup()
+                .addContainerGap(670, Short.MAX_VALUE)
+                .addComponent(txtid_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jMenuBar1.setBackground(new java.awt.Color(33, 150, 243));
@@ -126,7 +144,50 @@ public class frm_Menu extends javax.swing.JFrame {
         });
         jMenu3.add(jmi_articulo);
 
+        jminueva_compra.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        jminueva_compra.setText("Nueva compra");
+        jminueva_compra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jminueva_compraActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jminueva_compra);
+
+        jmiregistro_compra.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        jmiregistro_compra.setText("Registros de compras");
+        jmiregistro_compra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiregistro_compraActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jmiregistro_compra);
+
         jMenuBar1.add(jMenu3);
+
+        jMenu5.setForeground(new java.awt.Color(255, 255, 255));
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/facturas-de-papel.png"))); // NOI18N
+        jMenu5.setText("Venta");
+        jMenu5.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+
+        jminueva_venta.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        jminueva_venta.setText("Nueva venta");
+        jminueva_venta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jminueva_ventaActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jminueva_venta);
+
+        jmiregistro_venta.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        jmiregistro_venta.setText("Registros de ventas");
+        jmiregistro_venta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiregistro_ventaActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jmiregistro_venta);
+
+        jMenuBar1.add(jMenu5);
 
         jMenu4.setForeground(new java.awt.Color(255, 255, 255));
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton-de-encendido-apagado_1.png"))); // NOI18N
@@ -155,9 +216,7 @@ public class frm_Menu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jdp_escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jdp_escritorio)
         );
 
         pack();
@@ -205,6 +264,32 @@ public class frm_Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jmi_articuloActionPerformed
 
+    private void jminueva_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jminueva_ventaActionPerformed
+        // TODO add your handling code here:
+        
+        frm_Nueva_Venta form = new frm_Nueva_Venta(this, true);
+        form.setVisible(true);
+    }//GEN-LAST:event_jminueva_ventaActionPerformed
+
+    private void jminueva_compraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jminueva_compraActionPerformed
+        // TODO add your handling code here:
+        frm_Nueva_Compra form = new frm_Nueva_Compra(this, true);
+        form.setVisible(true);
+    }//GEN-LAST:event_jminueva_compraActionPerformed
+
+    private void jmiregistro_compraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiregistro_compraActionPerformed
+        // TODO add your handling code here:
+        frm_Venta_Venta form = new frm_Venta_Venta(this, true);
+        form.setVisible(true);
+        
+    }//GEN-LAST:event_jmiregistro_compraActionPerformed
+
+    private void jmiregistro_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiregistro_ventaActionPerformed
+        // TODO add your handling code here:
+        frm_Almac_Compra form = new frm_Almac_Compra(this, true);
+        form.setVisible(true);
+    }//GEN-LAST:event_jmiregistro_ventaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -244,6 +329,7 @@ public class frm_Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JDesktopPane jdp_escritorio;
@@ -252,5 +338,10 @@ public class frm_Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmi_personal;
     private javax.swing.JMenuItem jmi_proveedor;
     private javax.swing.JMenuItem jmi_usuario;
+    private javax.swing.JMenuItem jminueva_compra;
+    private javax.swing.JMenuItem jminueva_venta;
+    private javax.swing.JMenuItem jmiregistro_compra;
+    private javax.swing.JMenuItem jmiregistro_venta;
+    public static javax.swing.JTextField txtid_usuario;
     // End of variables declaration//GEN-END:variables
 }

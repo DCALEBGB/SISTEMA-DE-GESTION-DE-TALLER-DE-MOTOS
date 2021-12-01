@@ -51,6 +51,8 @@ public class frm_Almac_Articulo extends javax.swing.JFrame {
     SimpleDateFormat dformat = new SimpleDateFormat("yyyy-MM-dd");
     Helper help = new Helper();
     
+    int id_usuario;
+    
     public frm_Almac_Articulo() {
         initComponents();
         
@@ -71,6 +73,9 @@ public class frm_Almac_Articulo extends javax.swing.JFrame {
         btnregistrar.setEnabled(true);
         btneditar.setEnabled(false);
         btneliminar.setEnabled(false);
+        
+        frm_Menu f_menu = new frm_Menu();
+        id_usuario = Integer.parseInt(f_menu.txtid_usuario.getText());
         
         
     }
@@ -332,7 +337,7 @@ public class frm_Almac_Articulo extends javax.swing.JFrame {
 
         dts.setId_almacen(cboalmacen.getItemAt(cboalmacen.getSelectedIndex()).getId());
         dts.setId_unidad_medida(cbounidad_medida.getItemAt(cbounidad_medida.getSelectedIndex()).getId());
-        dts.setId_usuario(3);
+        dts.setId_usuario(id_usuario);
         dts.setId_tipo_articulo(cbotipo_articulo.getItemAt(cbotipo_articulo.getSelectedIndex()).getId());
         dts.setId_presentacion(cbopresentacion.getItemAt(cbopresentacion.getSelectedIndex()).getId());
         dts.setId_marca(cbomarca.getItemAt(cbomarca.getSelectedIndex()).getId());
@@ -394,7 +399,7 @@ public class frm_Almac_Articulo extends javax.swing.JFrame {
 
         dts.setId_almacen(cboalmacen.getItemAt(cboalmacen.getSelectedIndex()).getId());
         dts.setId_unidad_medida(cbounidad_medida.getItemAt(cbounidad_medida.getSelectedIndex()).getId());
-        dts.setId_usuario(3);
+        dts.setId_usuario(id_usuario);
         dts.setId_tipo_articulo(cbotipo_articulo.getItemAt(cbotipo_articulo.getSelectedIndex()).getId());
         dts.setId_presentacion(cbopresentacion.getItemAt(cbopresentacion.getSelectedIndex()).getId());
         dts.setId_marca(cbomarca.getItemAt(cbomarca.getSelectedIndex()).getId());

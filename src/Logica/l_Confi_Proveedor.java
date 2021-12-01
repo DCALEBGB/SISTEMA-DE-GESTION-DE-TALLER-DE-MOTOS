@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -119,6 +120,43 @@ public class l_Confi_Proveedor {
         return r;
         
         
+    
+    }
+    
+    
+    /* SELECT PROVEEDOR*/
+    public ArrayList<d_Confi_Proveedor> select_proveedor(){
+        
+        ArrayList<d_Confi_Proveedor> lista = new ArrayList<d_Confi_Proveedor>();
+        
+        sSql = "SELECT * FROM configuracion_proveedor";
+         
+        try {
+            
+            Statement st = conect.createStatement();
+            ResultSet rs = st.executeQuery(sSql);
+            
+            while(rs.next()){
+                
+                d_Confi_Proveedor d = new d_Confi_Proveedor();
+                
+                d.setId(rs.getInt("id"));
+                d.setNumero_documento(rs.getString("numero_documento"));
+                d.setNombre(rs.getString("nombre"));
+                d.setApellido_paterno(rs.getString("apellido_paterno"));
+                d.setApellido_materno(rs.getString("apellido_materno"));
+
+                lista.add(d);
+                
+            }
+            
+            
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+            return null;
+        }
+        
+        return lista;    
     
     }
     

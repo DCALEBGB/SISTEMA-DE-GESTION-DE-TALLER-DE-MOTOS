@@ -17,6 +17,8 @@ import javax.swing.UIManager;
  * @author PC
  */
 public class frm_Login extends javax.swing.JFrame {
+    
+    int id;
 
     /**
      * Creates new form frm_Login
@@ -50,6 +52,8 @@ public class frm_Login extends javax.swing.JFrame {
         if (du != null) {
             
             r = "BIENVENIVO AL SISTEMA: " + du.getNombre() + " " + du.getApellido(); 
+            
+            id = Integer.parseInt(String.valueOf(du.getId()));
 
         }
         
@@ -262,6 +266,8 @@ public class frm_Login extends javax.swing.JFrame {
             
             frm_Menu f_menu = new frm_Menu();
             f_menu.setVisible(true);
+            
+            f_menu.txtid_usuario.setText(String.valueOf(id));
           
             this.dispose();
 

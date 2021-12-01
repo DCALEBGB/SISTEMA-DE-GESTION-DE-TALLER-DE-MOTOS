@@ -777,6 +777,7 @@ public class frm_Confi_Usuario extends javax.swing.JFrame {
             txtapellido.setText(r.getApellido());
             txtusuario.setText(r.getUsuario());
             txtcontrasena.setText(r.getPassword());
+            txtemail.setText(r.getEmail());
             cbotipo.setSelectedItem(r.getTipo());
             
             

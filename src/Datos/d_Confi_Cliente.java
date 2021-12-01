@@ -27,6 +27,17 @@ public class d_Confi_Cliente {
         this.id = id;
     }
 
+    public d_Confi_Cliente(int id, String numero_documento, String nombre, String apellido_paterno, String apellido_materno) {
+        this.id = id;
+        this.numero_documento = numero_documento;
+        this.nombre = nombre;
+        this.apellido_paterno = apellido_paterno;
+        this.apellido_materno = apellido_materno;
+        
+    }
+    
+    
+
     public d_Confi_Cliente(int id, int id_tipo_documento, String numero_documento, int id_ubigeo, String apellido_paterno, String apellido_materno, String nombre, String razon_social, String direccion, String telefono, String correo, int fl_estado) {
         this.id = id;
         this.id_tipo_documento = id_tipo_documento;
@@ -136,6 +147,25 @@ public class d_Confi_Cliente {
 
     public int getFl_estado() {
         return fl_estado;
+    }
+    
+    @Override
+    public String toString(){
+        
+        return numero_documento + " | " + nombre + " " + apellido_paterno + " " + apellido_materno;
+    }
+    
+    @Override
+    public boolean equals(Object obj){
+        
+        if (obj != null) {
+            
+            return this.id == ((d_Confi_Cliente) obj).id;
+            
+        }
+        
+        return false;  
+        
     }
 
     
