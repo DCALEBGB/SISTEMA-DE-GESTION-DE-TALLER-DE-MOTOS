@@ -77,7 +77,7 @@ public class frm_Almac_Articulo extends javax.swing.JFrame {
         frm_Menu f_menu = new frm_Menu();
         id_usuario = Integer.parseInt(f_menu.txtid_usuario.getText());
         
-        
+    
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Procedimientos">

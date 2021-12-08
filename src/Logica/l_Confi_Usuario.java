@@ -125,7 +125,7 @@ public class l_Confi_Usuario {
     public boolean insertar (d_Confi_Usuario dts){
         
         sSql = "INSERT INTO configuracion_usuario(imagen, nombre, apellido, usuario, password, email,"
-                + "tipo,fecha_sistema,fl_estado)adsad"
+                + "tipo,fecha_sistema,fl_estado)"
                 + "VALUES(?,?,?,?,?,?,?,?,?)";
         try {
             

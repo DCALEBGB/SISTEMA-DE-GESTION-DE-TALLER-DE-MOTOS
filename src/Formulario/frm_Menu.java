@@ -32,7 +32,6 @@ public class frm_Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jdp_escritorio = new javax.swing.JDesktopPane();
-        txtid_usuario = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -55,7 +54,11 @@ public class frm_Menu extends javax.swing.JFrame {
 
         jdp_escritorio.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtid_usuario.setText("3");
+        txtid_usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtid_usuarioActionPerformed(evt);
+            }
+        });
 
         jdp_escritorio.setLayer(txtid_usuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -65,8 +68,8 @@ public class frm_Menu extends javax.swing.JFrame {
             jdp_escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jdp_escritorioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtid_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1343, Short.MAX_VALUE))
+                .addComponent(txtid_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1326, Short.MAX_VALUE))
         );
         jdp_escritorioLayout.setVerticalGroup(
             jdp_escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,16 +282,20 @@ public class frm_Menu extends javax.swing.JFrame {
 
     private void jmiregistro_compraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiregistro_compraActionPerformed
         // TODO add your handling code here:
-        frm_Venta_Venta form = new frm_Venta_Venta(this, true);
+        frm_Almac_Compra form = new frm_Almac_Compra(this, true);
         form.setVisible(true);
         
     }//GEN-LAST:event_jmiregistro_compraActionPerformed
 
     private void jmiregistro_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiregistro_ventaActionPerformed
         // TODO add your handling code here:
-        frm_Almac_Compra form = new frm_Almac_Compra(this, true);
+        frm_Venta_Venta form = new frm_Venta_Venta(this, true);
         form.setVisible(true);
     }//GEN-LAST:event_jmiregistro_ventaActionPerformed
+
+    private void txtid_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtid_usuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtid_usuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -342,6 +349,6 @@ public class frm_Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jminueva_venta;
     private javax.swing.JMenuItem jmiregistro_compra;
     private javax.swing.JMenuItem jmiregistro_venta;
-    public static javax.swing.JTextField txtid_usuario;
+    public static final javax.swing.JTextField txtid_usuario = new javax.swing.JTextField();
     // End of variables declaration//GEN-END:variables
 }

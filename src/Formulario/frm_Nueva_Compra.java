@@ -410,7 +410,7 @@ public class frm_Nueva_Compra extends javax.swing.JDialog {
 
         lbltitulo_venta.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lbltitulo_venta.setForeground(new java.awt.Color(51, 51, 51));
-        lbltitulo_venta.setText("NUEVA VENTA");
+        lbltitulo_venta.setText("NUEVA COMPRA");
 
         lblclose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/cerrar-b1.png"))); // NOI18N
         lblclose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -446,7 +446,7 @@ public class frm_Nueva_Compra extends javax.swing.JDialog {
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Venta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Consolas", 1, 14), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Compra", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Consolas", 1, 14), new java.awt.Color(102, 102, 102))); // NOI18N
 
         txtserie.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
 
@@ -584,7 +584,7 @@ public class frm_Nueva_Compra extends javax.swing.JDialog {
         txtprecio_venta.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Consolas", 1, 13)); // NOI18N
-        jLabel9.setText("Precio venta");
+        jLabel9.setText("Precio compra");
 
         btnagregar.setBackground(new java.awt.Color(51, 181, 231));
         btnagregar.setForeground(new java.awt.Color(255, 255, 255));
@@ -702,7 +702,7 @@ public class frm_Nueva_Compra extends javax.swing.JDialog {
 
             },
             new String [] {
-                "Id_articulo", "Artículo", "Cantidad", "Precio venta", "Importe"
+                "Id_articulo", "Artículo", "Cantidad", "Precio compra", "Importe"
             }
         ) {
             boolean[] canEdit = new boolean [] {
