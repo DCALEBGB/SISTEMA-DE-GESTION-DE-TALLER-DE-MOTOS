@@ -268,7 +268,7 @@ public class frm_Login extends javax.swing.JFrame {
             f_menu.setVisible(true);
             
             f_menu.txtid_usuario.setText(String.valueOf(id));
-          
+
             this.dispose();
 
         }else{
