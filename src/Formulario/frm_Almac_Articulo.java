@@ -837,6 +837,11 @@ public class frm_Almac_Articulo extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setText("Costo");
 
+        txtcosto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcostoActionPerformed(evt);
+            }
+        });
         txtcosto.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtcostoKeyTyped(evt);
@@ -1332,6 +1337,10 @@ public class frm_Almac_Articulo extends javax.swing.JFrame {
           
         }
     }//GEN-LAST:event_jcbfl_venceMouseClicked
+
+    private void txtcostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcostoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcostoActionPerformed
 
     /**
      * @param args the command line arguments

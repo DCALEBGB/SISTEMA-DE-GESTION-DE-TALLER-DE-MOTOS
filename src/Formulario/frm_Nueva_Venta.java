@@ -566,10 +566,20 @@ public class frm_Nueva_Venta extends javax.swing.JDialog {
         bground_filtro_articulo.add(jrbcodigo_barra);
         jrbcodigo_barra.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jrbcodigo_barra.setText("Código barra");
+        jrbcodigo_barra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbcodigo_barraActionPerformed(evt);
+            }
+        });
 
         bground_filtro_articulo.add(jrbnombre);
         jrbnombre.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jrbnombre.setText("Nombre");
+        jrbnombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbnombreActionPerformed(evt);
+            }
+        });
 
         txtstock.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         txtstock.setEnabled(false);
@@ -931,6 +941,14 @@ public class frm_Nueva_Venta extends javax.swing.JDialog {
         }
         
     }//GEN-LAST:event_txtbusquedaKeyTyped
+
+    private void jrbcodigo_barraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbcodigo_barraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jrbcodigo_barraActionPerformed
+
+    private void jrbnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbnombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jrbnombreActionPerformed
 
     /**
      * @param args the command line arguments
