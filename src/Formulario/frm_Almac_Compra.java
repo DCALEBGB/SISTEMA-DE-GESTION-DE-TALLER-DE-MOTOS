@@ -228,12 +228,6 @@ public class frm_Almac_Compra extends javax.swing.JDialog {
     private void table_registroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_registroMouseClicked
         // TODO add your handling code here:
         
-       
-        
-        
-        
-      
-        
       
     }//GEN-LAST:event_table_registroMouseClicked
 

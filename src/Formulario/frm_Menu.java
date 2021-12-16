@@ -1,7 +1,10 @@
 
 package Formulario;
 
+import Datos.d_CajaChica;
+import Logica.l_CajaChica;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -19,7 +22,39 @@ public class frm_Menu extends javax.swing.JFrame {
         this.setLocation(0, 0);
         
         this.txtid_usuario.setVisible(false);
+        this.txtnombre_usuario.setVisible(false);
+        this.txtidcaja_chica.setVisible(false);
+        
+        Verificar_CajaChica();
+        
      
+    }
+    
+    
+    String Verificar_CajaChica(){
+        
+        String r = "";
+        
+        d_CajaChica dc;
+        
+        l_CajaChica func = new l_CajaChica();
+        
+        dc = func.Verificar_CajaChica_aperturado();
+        
+        
+        if (dc != null) {
+            
+            this.txtidcaja_chica.setText(String.valueOf(dc.getId()));
+            r = "Caja chica aperturada";   
+        
+        }else{
+            
+            this.txtidcaja_chica.setText("");
+ 
+        }
+        
+        return r;
+          
     }
 
     /**
@@ -46,6 +81,8 @@ public class frm_Menu extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jminueva_venta = new javax.swing.JMenuItem();
         jmiregistro_venta = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jmi_caja_chica = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -61,6 +98,8 @@ public class frm_Menu extends javax.swing.JFrame {
         });
 
         jdp_escritorio.setLayer(txtid_usuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jdp_escritorio.setLayer(txtnombre_usuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jdp_escritorio.setLayer(txtidcaja_chica, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jdp_escritorioLayout = new javax.swing.GroupLayout(jdp_escritorio);
         jdp_escritorio.setLayout(jdp_escritorioLayout);
@@ -69,13 +108,20 @@ public class frm_Menu extends javax.swing.JFrame {
             .addGroup(jdp_escritorioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtid_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1326, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtnombre_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addComponent(txtidcaja_chica, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(864, Short.MAX_VALUE))
         );
         jdp_escritorioLayout.setVerticalGroup(
             jdp_escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jdp_escritorioLayout.createSequentialGroup()
                 .addContainerGap(670, Short.MAX_VALUE)
-                .addComponent(txtid_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jdp_escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtid_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtnombre_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtidcaja_chica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -192,6 +238,22 @@ public class frm_Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu5);
 
+        jMenu6.setForeground(new java.awt.Color(255, 255, 255));
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/money-1.png"))); // NOI18N
+        jMenu6.setText("Caja");
+        jMenu6.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+
+        jmi_caja_chica.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
+        jmi_caja_chica.setText("Caja chica");
+        jmi_caja_chica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_caja_chicaActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jmi_caja_chica);
+
+        jMenuBar1.add(jMenu6);
+
         jMenu4.setForeground(new java.awt.Color(255, 255, 255));
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton-de-encendido-apagado_1.png"))); // NOI18N
         jMenu4.setText("Salir");
@@ -270,14 +332,38 @@ public class frm_Menu extends javax.swing.JFrame {
     private void jminueva_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jminueva_ventaActionPerformed
         // TODO add your handling code here:
         
-        frm_Nueva_Venta form = new frm_Nueva_Venta(this, true);
-        form.setVisible(true);
+        Verificar_CajaChica();
+        
+        String id_caja_chica = this.txtidcaja_chica.getText();
+        
+        if (!id_caja_chica.equals("")) {
+            
+            frm_Nueva_Venta form = new frm_Nueva_Venta(this, true);
+            form.setVisible(true);
+            
+        }else{
+            
+            JOptionPane.showMessageDialog(rootPane, "Debe abrir una caja chica para generar ventas");
+            
+        }
     }//GEN-LAST:event_jminueva_ventaActionPerformed
 
     private void jminueva_compraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jminueva_compraActionPerformed
         // TODO add your handling code here:
-        frm_Nueva_Compra form = new frm_Nueva_Compra(this, true);
-        form.setVisible(true);
+        Verificar_CajaChica();
+        
+        String id_caja_chica = this.txtidcaja_chica.getText();
+        
+        if (!id_caja_chica.equals("")) {
+            
+            frm_Nueva_Compra form = new frm_Nueva_Compra(this, true);
+            form.setVisible(true);
+            
+        }else{
+            
+            JOptionPane.showMessageDialog(rootPane, "Debe abrir una caja chica para generar compras");
+            
+        }
     }//GEN-LAST:event_jminueva_compraActionPerformed
 
     private void jmiregistro_compraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiregistro_compraActionPerformed
@@ -296,6 +382,12 @@ public class frm_Menu extends javax.swing.JFrame {
     private void txtid_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtid_usuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtid_usuarioActionPerformed
+
+    private void jmi_caja_chicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_caja_chicaActionPerformed
+        // TODO add your handling code here:
+        frm_CajaChica form = new frm_CajaChica();
+        form.setVisible(true);
+    }//GEN-LAST:event_jmi_caja_chicaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -337,10 +429,12 @@ public class frm_Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JDesktopPane jdp_escritorio;
     private javax.swing.JMenuItem jmi_articulo;
+    private javax.swing.JMenuItem jmi_caja_chica;
     private javax.swing.JMenuItem jmi_cliente;
     private javax.swing.JMenuItem jmi_personal;
     private javax.swing.JMenuItem jmi_proveedor;
@@ -350,5 +444,7 @@ public class frm_Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiregistro_compra;
     private javax.swing.JMenuItem jmiregistro_venta;
     public static final javax.swing.JTextField txtid_usuario = new javax.swing.JTextField();
+    public static final javax.swing.JTextField txtidcaja_chica = new javax.swing.JTextField();
+    public static final javax.swing.JTextField txtnombre_usuario = new javax.swing.JTextField();
     // End of variables declaration//GEN-END:variables
 }

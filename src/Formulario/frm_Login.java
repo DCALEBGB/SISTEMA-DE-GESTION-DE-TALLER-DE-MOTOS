@@ -19,6 +19,7 @@ import javax.swing.UIManager;
 public class frm_Login extends javax.swing.JFrame {
     
     int id;
+    String nombre_usuario;
 
     /**
      * Creates new form frm_Login
@@ -54,6 +55,7 @@ public class frm_Login extends javax.swing.JFrame {
             r = "BIENVENIVO AL SISTEMA: " + du.getNombre() + " " + du.getApellido(); 
             
             id = Integer.parseInt(String.valueOf(du.getId()));
+            nombre_usuario = du.getNombre() + " " + du.getApellido();
 
         }
         
@@ -128,7 +130,7 @@ public class frm_Login extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(39, 39, 39)
                 .addComponent(lblbackground, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                     .addContainerGap(496, Short.MAX_VALUE)
@@ -163,7 +165,8 @@ public class frm_Login extends javax.swing.JFrame {
         jLabel6.setText("CONTRASEÑA");
 
         btningresar.setBackground(new java.awt.Color(0, 153, 255));
-        btningresar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        btningresar.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        btningresar.setForeground(new java.awt.Color(255, 255, 255));
         btningresar.setText("INGRESAR");
         btningresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -268,6 +271,7 @@ public class frm_Login extends javax.swing.JFrame {
             f_menu.setVisible(true);
             
             f_menu.txtid_usuario.setText(String.valueOf(id));
+            f_menu.txtnombre_usuario.setText(nombre_usuario);
 
             this.dispose();
 

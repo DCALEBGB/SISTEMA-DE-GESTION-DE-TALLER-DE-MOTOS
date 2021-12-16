@@ -2,15 +2,19 @@
 package Formulario;
 
 import Datos.d_Almac_Articulo;
+import Datos.d_Caja;
+import Datos.d_CajaChica;
 import Datos.d_Confi_Cliente;
 import Datos.d_Stati_Comprobante;
 import Datos.d_Venta_Venta;
 import Datos.d_Venta_VentaDetalle;
+import Logica.l_Caja;
 import Logica.l_Confi_Cliente;
 import Logica.l_Static;
 import Logica.l_Venta_Venta;
 import java.awt.Color;
 import java.awt.Font;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -28,6 +32,8 @@ public class frm_Nueva_Venta extends javax.swing.JDialog {
     int fila = 0;
     
     int id_usuario;
+    
+    String serie_caja, numero_caja;
 
     public frm_Nueva_Venta(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -203,6 +209,24 @@ public class frm_Nueva_Venta extends javax.swing.JDialog {
         
     }
     
+    void correlativo_caja(){
+        
+        d_Caja  dts;
+        
+        l_Caja func = new l_Caja();
+  
+        dts = func.correlativo();
+
+        if (dts != null) {
+            
+            serie_caja = dts.getSerie();
+            numero_caja = dts.getNumero();
+        
+        }
+
+        
+    }
+    
     
     void calcular_total(){
         
@@ -270,10 +294,38 @@ public class frm_Nueva_Venta extends javax.swing.JDialog {
                 
             }
             
+            SimpleDateFormat dformat = new SimpleDateFormat("yyyy-MM-dd");
+            
+            frm_Menu f_menu = new frm_Menu();
+            int id_caja_chica = Integer.parseInt(f_menu.txtidcaja_chica.getText());
+            
+            d_Caja dts_c = new d_Caja();
+            l_Caja func_c = new l_Caja();
+            
+            correlativo_caja();
+            
+            dts_c.setFecha(dformat.format(jdcfecha.getDate()));
+            dts_c.setSerie(serie_caja);
+            dts_c.setNumero(numero_caja);
+            dts_c.setMotivo("VENTA");
+            dts_c.setImporte(Double.parseDouble(txtimporte.getText().trim()));
+            dts_c.setFl_estado(1);
+            dts_c.setId_usuario(id_usuario);
+            dts_c.setId_caja_chica(id_caja_chica);
+            dts_c.setTipo_movimiento("INGRESO");
+            
+            func_c.save_caja_venta(dts_c);
             
             
+            d_CajaChica dts_cc = new d_CajaChica();
+            l_Caja func_cc = new l_Caja();
             
+            dts_cc.setTotal_ingreso(Double.parseDouble(txtimporte.getText().trim()));
+            dts_cc.setTotal_saldo(Double.parseDouble(txtimporte.getText().trim()));
+            dts_cc.setId(id_caja_chica);
+            func_cc.update_cajachica_venta(dts_cc);
             
+
             
             JOptionPane.showMessageDialog(rootPane, "Registrado Correctamente");
             limpiar();
