@@ -137,8 +137,8 @@ public class l_CajaChica {
     public boolean aperturar (d_CajaChica dts){
 
         sSql = "INSERT INTO caja_chica(fecha_sistema,saldo_inicial,"
-                + "total_saldo,id_usuario,fecha_apertura,estado)"
-                + "VALUES(?,?,?,?,?,?)";
+                + "total_saldo,id_usuario,fecha_apertura,estado, total_ingreso, total_egreso)"
+                + "VALUES(?,?,?,?,?,?,0,0)";
         try {
             PreparedStatement pst = conect.prepareStatement(sSql);
             
