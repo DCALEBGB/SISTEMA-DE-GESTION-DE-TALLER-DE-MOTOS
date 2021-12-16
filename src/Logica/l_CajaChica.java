@@ -140,6 +140,7 @@ public class l_CajaChica {
                 + "total_saldo,id_usuario,fecha_apertura,estado, total_ingreso, total_egreso)"
                 + "VALUES(?,?,?,?,?,?,0,0)";
         try {
+            
             PreparedStatement pst = conect.prepareStatement(sSql);
             
             pst.setString(1, dts.getFecha_sistema());
