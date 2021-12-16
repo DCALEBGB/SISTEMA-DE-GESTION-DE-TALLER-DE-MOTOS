@@ -29,11 +29,6 @@ public class frm_Login extends javax.swing.JFrame {
         
         this.setLocationRelativeTo(null);
         
-        ImageIcon imgIcon = new ImageIcon(getClass().getResource("../Imagenes/login.png"));
-        Image imgEscalada = imgIcon.getImage().getScaledInstance(lblbackground.getWidth(),
-        lblbackground.getHeight(), Image.SCALE_SMOOTH);
-        Icon iconoEscalado = new ImageIcon(imgEscalada);
-        lblbackground.setIcon(iconoEscalado);
     }
     
     
